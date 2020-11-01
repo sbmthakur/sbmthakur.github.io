@@ -27,6 +27,7 @@ jobs:
     - run: npm ci
     - run: npm run build
     - run: npm run export
+    - run: touch ./out/.nojekyll # To avoid _next problem in future: https://youtu.be/yRz8D_oJMWQ?t=915
        
     - name: Deploy 🚀
       uses: JamesIves/github-pages-deploy-action@3.7.1
