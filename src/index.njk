@@ -6,8 +6,6 @@ eleventyNavigation:
   order: 1
 ---
 
-Hello lol
-
 {#
 {% set maxPosts = collections.posts.length %}
 <h1>Latest {% if maxPosts == 1 %}Post{% else %}{{ maxPosts }} Posts{% endif %}</h1>

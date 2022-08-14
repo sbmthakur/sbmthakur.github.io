@@ -5,6 +5,8 @@ date: 2018-05-01
 layout: layouts/post.njk
 ---
 
+<a href='#vid'>Click here if you prefer a video</a>
+
 Recently I had a use-case where I had to trigger a certain action after a specific sequence of events. I had no idea how long the sequence will take. I thought of scheduling this action on a separate thread after sometime. However, after a few tests it became clear that this approach is not fault tolerant. To my luck, this entire sequence ran in a container which is stopped once the sequence ends. It became clear that [Podman events](https://github.com/containers/podman/blob/main/docs/source/markdown/podman-events.1.md) can come handy here.
 
 For my use-case, I am only interested in the `stop` events. This can be easily done by passing a _filter_ to the `podman events` command.
@@ -67,6 +69,8 @@ $ python events.py
 http_server
 my_redis
 ```
+<br>
+<iframe id="vid" width="100%" height="500" src="https://www.youtube.com/embed/RbLt9ws89fE" title="Subscribing to Podman events" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ### References:
 
